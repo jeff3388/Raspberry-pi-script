@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import subprocess
 import requests
 import os
 
@@ -28,8 +29,7 @@ elif signal == '1':
 
 elif signal == '2':
     ## python主程式更新 ## 
-    os.system('cd /home/pi/jojo')
-    os.system('git clone https://github.com/jeff3388/Raspberry-pi-python-main.git')
+    subprocess.Popen("sh test.sh", shell=True, cwd='/home/pi/jojo',)     #在cwd目录下执行命令
 
 elif signal == '3':
     ## 執行主程式 ##
